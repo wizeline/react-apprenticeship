@@ -55,7 +55,7 @@ Let's look at the example, we have an interface for a Car with a series of metho
 
                 class Excavator implements Vehicule {
                         honk(){
-                               throw new Error('not implemented');
+                               throw new Error("Excavators don't honk");
                         }
                 }
 
