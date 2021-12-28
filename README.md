@@ -52,4 +52,10 @@
 
 # [Clean Code](./topics/cleancode/readme.md)
 - What is clean code?
+- DRY
+- YAGNY
+- Naming
+- Functions
+- Comments
+- Reading code from top to bottom
 - Code smells
