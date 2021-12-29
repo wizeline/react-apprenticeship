@@ -34,17 +34,33 @@ But don't make it overly simple that compromises functionality and delivery.
 <br />
 
 ## Naming
-### Use intention reveling names
 
-### Avoid desinformation
+- ### Use intention reveling names
+The name of a variable, function, class etc, should tell why it exists, what it does and how it is used. If the name requires a comment them is not a good name.
 
-### Use pronounceable Name
+        let d; //Elapsed days (bad)
 
-### Use Searchable Names
+        let elapsedDays; //Good, the name indicate purpose
 
-### Class Names
 
-### Method Names
+- ### Avoid desinformation
+Avoid using names that can be misinterpreted or that can have multiple meanings.
+For example, asuming that you handle users, a variable with the name userList must have a list of users as the name implies , it can't contain a string;
+
+        // one will expect an array of users
+        // but here is a string with name separated by commas.
+        // This is counter intuitive
+        let userList = "Garry, Viktor, Vladimir";
+
+
+
+- ### Use pronounceable Name
+
+- ### Use Searchable Names
+
+- ### Class Names
+
+- ### Method Names
 
 <br />
 
@@ -58,9 +74,12 @@ But don't make it overly simple that compromises functionality and delivery.
 <br />
 
 ## Comments
+- does and don'ts
+- Include commented out code.
 
 <br />
 
 
 ## Refactor example
 - Make an example refactor on the live session where we apply all.
+
