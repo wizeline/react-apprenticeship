@@ -55,8 +55,35 @@ For example, asuming that you handle users, a variable with the name userList mu
 
 
 - ### Use pronounceable Name
+ Names have to mean something and if they do different things they also need to have different names, for example.
+
+        function dobleItems(a, b){
+                a.forEach((i) => b.push(i*2) );
+        }
+
+        In this case it is better to call a and b with source and target
+
+        function dobleItems(source, target){
+                source.forEach((current) => target.push(current*2) );
+        }
+
+
+Avoid noise words that are redundant, for example imagine you have a class called Product. If you have another class named ProductData or ProductInfo you have made the name differents but they don't mean something different, the prefixes Info and Data are just noise.
 
 - ### Use Searchable Names
+
+        function calculateSalary(base){
+                return base * 8 * 24;
+        }
+
+        function calculateSalary(hourlyBase){
+                const WORK_HOURS_AT_DAY = 8;
+                const AVERAGE_DAYS_MONTH  = 24;
+
+                return hourlyBase * WORK_HOURS_AT_DAY * AVERAGE_DAYS_MONTH;
+        }
+
+
 
 - ### Class Names
 
