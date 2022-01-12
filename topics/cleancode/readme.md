@@ -72,31 +72,79 @@ Avoid noise words that are redundant, for example imagine you have a class calle
 
 - ### Use Searchable Names
 
-        function calculateSalary(base){
-                return base * 8 * 24;
-        }
+When using a single-letter name for a variable is hard to know what is does and numeric constants are hard to understand because they don't give you much information. Compare both examples, the first one is just a math operation we don't really know what this numbers are, but the second one we know exaclty what is going on.
 
-        function calculateSalary(hourlyBase){
-                const WORK_HOURS_AT_DAY = 8;
-                const AVERAGE_DAYS_MONTH  = 24;
-
-                return hourlyBase * WORK_HOURS_AT_DAY * AVERAGE_DAYS_MONTH;
+        function calculateDays(s){
+                return s * 60 * 60 * 24;
         }
 
 
+        function calculateDays(seconds){
+                const SECONDS_IN_MINUTE = 60;
+                const MINUTES_IN_AN_HOUR = 60;
+                const HOURS_IN_A_DAY = 24;
 
-- ### Class Names
+                return seconds / SECONDS_IN_MINUTE / MINUTES_IN_AN_HOUR / HOURS_IN_A_DAY;
+        }
 
-- ### Method Names
 
 <br />
 
 ## Functions
-- Small
-- Do one thing
-- Reading code from top to bottom.
-- use descriptive names
-- Function arguments
+### Small
+
+Functions should be small, not longer than 30 lines of code.
+
+### Do one thing
+
+__Functions should do one thing. They should do it well. They should do it only.__
+
+If you find that you are doing more than one operation in a function, probably is because you can split this function into multiple smaller functions. Check the example bellow, this function is doing multiple operations and can be split into multiple sub operations.
+
+        function calculatePayment(employee){
+                let hourlyRate;
+
+                switch(employee.job){
+                        case "astronaut" : hourlyRate = 5000;
+                        break;
+                        case "manager" : hourlyRate = 1000;
+                        break;
+                        case "director" : hourlyRate = 2000;
+                        break;
+                        default : hourlyRate = 500;
+                }
+
+                const workDays = employee.hoursPerDay * 5;
+
+                return hourlyRate * workDays;
+        }
+
+
+
+        function calculatePayment(employee){
+                const hourlyRate = getEmployeeHourlyRate(employee);
+                const workDays = getEmployeeHourlyRate(employee);
+
+                return hourlyRate * workDays;
+        } 
+
+
+        function getEmployeeHourlyRate(employee){
+                switch(employee.job){
+                    case "astronaut" : return 5000;
+                    case "manager" : return 1000;
+                    case "director" : return 2000;
+                    default : return  500;
+                }
+        }
+
+        function getEmployeeWorkDays(employee){
+                return employee.hoursPerDay * 5;
+        }
+
+### Reading code from top to bottom.
+### use descriptive names
+### Function arguments
 
 <br />
 
