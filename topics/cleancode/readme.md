@@ -101,6 +101,7 @@ __Functions should do one thing. They should do it well. They should do it only.
 
 If you find that you are doing more than one operation in a function, probably is because you can split this function into multiple smaller functions. Check the example bellow, this function is doing multiple operations and can be split into multiple sub operations.
 
+        //Wrong, doing too many things
         function calculatePayment(employee){
                 let hourlyRate;
 
@@ -121,9 +122,12 @@ If you find that you are doing more than one operation in a function, probably i
 
 
 
+
+         //------------------
+        // Right, doing one thing per function
         function calculatePayment(employee){
                 const hourlyRate = getEmployeeHourlyRate(employee);
-                const workDays = getEmployeeHourlyRate(employee);
+                const workDays = getEmployeeWorkDays(employee);
 
                 return hourlyRate * workDays;
         } 
