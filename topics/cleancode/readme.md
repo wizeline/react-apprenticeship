@@ -143,6 +143,28 @@ If you find that you are doing more than one operation in a function, probably i
         }
 
 ### Reading code from top to bottom.
+
+When having multiple functions is better to write them from top to bottom, being the one in the top the top level of abstraction and in the bottom the other function this "top" function uses. For example, let's says that we have function A it uses functions B and C. The "top" function will be A and bellow it we should find B and C (check the code from the previous topic).
+
+```javascript
+function A(){
+        B();
+        C();
+}
+
+function B(){
+        //more code
+}
+
+function C(){
+        //more code
+}
+
+```
+
+
+
+
 ### use descriptive names
 ### Function arguments
 
