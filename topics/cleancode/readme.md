@@ -166,17 +166,35 @@ function C(){
 
 ```
 
-
-
-
-### use descriptive names
 ### Function arguments
+
+Try to have as little arguments as possible, as a general rule up to three. More than three arguments requires justification. Functions with many arguments add mental overload.
 
 <br />
 
 ## Comments
-- does and don'ts
-- Include commented out code.
+Comments are not a way to fix bad code, long functions, bad naming etc.. needs to be avoided and adding a comment wont make it clean. You should be able to express yourself in the code.
+
+Comments are usefull when used correctly
+
+- Legal comments
+- Informative comments
+- Explanation of Intent
+- Clarification
+- Warning of Consequences
+- Todo comments
+- Amplification
+
+Don't
+- Inappropriate Information
+- Obsolte comment
+- Redundant Comment
+- Poorly written comment
+- Commented out code
+
+
+Keep in mind that comments needs to be updated as code evolves. So when you add a comment you also add the responsability of keep this comment out to date.
+
 
 <br />
 
