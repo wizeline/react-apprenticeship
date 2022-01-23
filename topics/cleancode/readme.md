@@ -2,7 +2,7 @@
 
 - What is clean code?
 
-Is elegant and efficient,simple and direct, the logic should be straightforward with minimal dependencies and performance close to optimal. 
+Is elegant and efficient, simple and direct, the logic should be straightforward with minimal dependencies and performance close to optimal. 
 
 It has meaningful names and it provides one way  rather than many ways for doing one thing.
 Don't contain duplication and Expresses all the design ideas that are in the system, it reads like well-written prose, Clean code does one thing well.
@@ -17,7 +17,7 @@ DRY is more than code is about the duplication of knowledge, of intent. It's abo
 <br />
 
 ## YAGNY - You Aren't Gonna Need It.
-Impement things when you actually need them, never when you just foresee that you need them.
+Implement things when you actually need them, never when you just foresee that you need them.
 Following YAGNI helps us to avoid over-engineering a solution. You don't want to spend time on future scenarios that are unknown. The problem with implementing a feature that you think might eventually be needed is that quite often the feature ends up not being needed or the requirements for it change.
 
 <br />
@@ -35,7 +35,7 @@ But don't make it overly simple that compromises functionality and delivery.
 
 ## Naming
 
-- ### Use intention reveling names
+- ### Use intention revealing names
 The name of a variable, function, class etc, should tell why it exists, what it does and how it is used. If the name requires a comment them is not a good name.
 
         let d; //Elapsed days (bad)
@@ -45,7 +45,7 @@ The name of a variable, function, class etc, should tell why it exists, what it 
 
 - ### Avoid desinformation
 Avoid using names that can be misinterpreted or that can have multiple meanings.
-For example, asuming that you handle users, a variable with the name userList must have a list of users as the name implies , it can't contain a string;
+For example, assuming that you handle users, a variable with the name userList must have a list of users as the name implies , it can't contain a string;
 
         // one will expect an array of users
         // but here is a string with name separated by commas.
@@ -72,7 +72,7 @@ Avoid noise words that are redundant, for example imagine you have a class calle
 
 - ### Use Searchable Names
 
-When using a single-letter name for a variable is hard to know what is does and numeric constants are hard to understand because they don't give you much information. Compare both examples, the first one is just a math operation we don't really know what this numbers are, but the second one we know exaclty what is going on.
+When using a single-letter name for a variable is hard to know what is does and numeric constants are hard to understand because they don't give you much information. Compare both examples, the first one is just a math operation we don't really know what this numbers are, but the second one we know exactly what is going on.
 
         function calculateDays(s){
                 return s * 60 * 60 * 24;
@@ -148,7 +148,7 @@ If you find that you are doing more than one operation in a function, probably i
 
 ### Reading code from top to bottom.
 
-When having multiple functions is better to write them from top to bottom, being the one in the top the top level of abstraction and in the bottom the other function this "top" function uses. For example, let's says that we have function A it uses functions B and C. The "top" function will be A and bellow it we should find B and C (check the code from the previous topic).
+When having multiple functions is better to write them from top to bottom, being the one in the top the top level of abstraction and in the bottom the other function this "top" function uses. For example, let's says that we have function A it uses functions B and C. The "top" function will be A and below it we should find B and C (check the code from the previous topic).
 
 ```javascript
 function A(){
@@ -173,7 +173,7 @@ Try to have as little arguments as possible, as a general rule up to three. More
 <br />
 
 ## Comments
-Comments are not a way to fix bad code, long functions, bad naming etc.. needs to be avoided and adding a comment wont make it clean. You should be able to express yourself in the code.
+Comments are not a way to fix bad code, long functions, bad naming etc.. needs to be avoided and adding a comment won't make it clean. You should be able to express yourself in the code.
 
 Comments are usefull when used correctly
 
@@ -187,13 +187,13 @@ Comments are usefull when used correctly
 
 Don't
 - Inappropriate Information
-- Obsolte comment
+- Obsolete comment
 - Redundant Comment
 - Poorly written comment
 - Commented out code
 
 
-Keep in mind that comments needs to be updated as code evolves. So when you add a comment you also add the responsability of keep this comment out to date.
+Keep in mind that comments needs to be updated as code evolves. So when you add a comment you also add the responsibility of keep this comment out to date.
 
 
 <br />
@@ -202,3 +202,8 @@ Keep in mind that comments needs to be updated as code evolves. So when you add 
 ## Refactor example
 - Make an example refactor on the live session where we apply all.
 
+Define Clean Code.
+Concepts to keep in mind.
+Naming.
+Functions
+Comments
