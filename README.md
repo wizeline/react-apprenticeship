@@ -28,10 +28,10 @@
  - Concepts involved
 
 
-# [CSS Modules](./topics/cssmodules/readme.md)
+# [CSS Modules](./topics/cssmodules/README.md)
 - Exercise
 
-# [Patterns](./topics/patterns/readme.md)
+# [Patterns](./topics/patterns/README.md)
 - Composition
 - CustomHooks
 - High Order Components
