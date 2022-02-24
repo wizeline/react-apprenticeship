@@ -28,7 +28,7 @@
  - Concepts involved
 
 
-# [CSS Modules](./topics/context/readme.md)
+# [CSS Modules](./topics/cssmodules/readme.md)
 - Exercise
 
 # [Patterns](./topics/patterns/readme.md)
