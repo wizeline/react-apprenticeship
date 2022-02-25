@@ -1,17 +1,17 @@
 # Memoization
 
-Memoization is an optimization technique that will make our apps consume less resources by no recalculating things it doesn't need to be recalculated, an example could be a component that is reciving the same props. Luckly React got us covered by providing 2 hooks and a HoC that will do the trick in different scenarios. 
+**Memoization** is an optimization technique that makes an application utilize fewer resources by not recalculating unnecessary information. One example is a component receiving the same props. React provides two hooks and a High Order Component (HoC) that help in different scenarios: 
 
- - memo
- - useMemo
- - useCallback
+ - `memo`
+ - `useMemo`
+ - `useCallback`
 
 
 ## memo()
 
-Is a high order component (HoC) that will compare the props passed and if they are the same then will reuse the latter value avoiding re-calculating the component.
+The memo is an HoC that compares the prop passed. If they are the same memo, reuse the latter value avoiding recalculating the component.
 
- **When to use it?** : Use it when your components are pure, that means that if for the same input the component will render the same output.
+ **When to use it?**: When your components are pure, this means that the component will render the same output for the same input.
 
 Example:
 
@@ -26,11 +26,10 @@ Example:
 
 
 ## useMemo
-This hook will memoize a calculated value and check for its dependencies, if dependencies don't change them they won't be calculated with every re-render.
-The hook will receive a callback to compute the value and an array of dependencies useMemo(callback,dependencies) (kind of like useEffect);
+This **hook** *memoizes* a calculated value and checks for dependencies, if the dependencies do not change they will not be calculated every re-renderization. The hook receives a callback to compute the value and an array of dependencies `useMemo` (callback and dependencies) similar to `useEffect`.
 
 **When to use it?:** 
-Use it when you need to do some expensive calculations inside your component that you know won't change if the dependencies are the same.
+When you need to do calculations inside your component, it will not change if the dependencies are the same.
 
         import { useMemo } from 'react';
         import hashDigest from './my-digest-lib';
@@ -45,9 +44,9 @@ Use it when you need to do some expensive calculations inside your component tha
 
 
 ## useCallback
-This hooks will memoize callbacks, is like useMemo but for callbacks. If the declaration for a callback don't change if the props wich it depends are the same, then this hook will help us maintain the same reference to the already computed callback.
+This **hook** *memoizes* callbacks, similar to `useMemo`. Suppose the declaration for a callback does not change if the props, which depends on, are the same. Then this **hook** maintains the same reference to the already computed callback.
 
-**When to use it?:** When you have a callback that you don't want to be re evaluated, for example when you pass this function down to a child component and this child is a pure component.
+**When to use it?**: When you do not want to re-evaluate a callback. For example, pass this function to a child component, which is a pure component.
 
 
         import ItemDetail from './item-detail.js';
@@ -69,5 +68,5 @@ This hooks will memoize callbacks, is like useMemo but for callbacks. If the dec
 
 
 
-> **Note on memoization:** By itself none of this operations are "free", React needs to run some logic to achieve this, so only use them if the re-calculation is more expensive than the memoization, in general terms if you are only rendering one simple component probable you won't need to memoize, but if you render a list of items, or have a complex table filled with lots of data them memoization can help you optimize your app.
+> **Note on memoization**: Memoization and its operations are not *free*. **React** needs to run some logic to achieve these operations, so only use them if the re-calculation is more expensive than the *memoization*. In general, if you are only using a simple component, probably, you will not need to *memoize*. However, if you render a list of items or have a complex table filled with a considerable amount of data, *memoization* helps optimize your application.
 

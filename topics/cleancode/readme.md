@@ -1,51 +1,50 @@
 # Clean Code
 
-- What is clean code?
+**What is Clean Code?**
 
-Is elegant and efficient, simple and direct, the logic should be straightforward with minimal dependencies and performance close to optimal. 
+Clean Code is elegant, efficient, simple, and direct. The logic should be straightforward with minimal dependencies and performance close to optimal. 
 
-It has meaningful names and it provides one way  rather than many ways for doing one thing.
-Don't contain duplication and Expresses all the design ideas that are in the system, it reads like well-written prose, Clean code does one thing well.
+It has meaningful names, and it provides one way rather than many different ways of doing one thing. Do not contain duplication and express all the design ideas in the system. It is read like well-written prose. Clean Code does one thing well.
 
 <br />
 
 ## DRY - Don't Repeat Yourself
-Every piece of knowledge must have a single unambiguous, authoritative representation within a system.
+Every piece of knowledge must have a single, unambiguous, and authoritative representation within a system.
 
-DRY is more than code is about the duplication of knowledge, of intent. It's about expressing the same thing in two different places, possibly in two totally different ways.
+**DRY** is more than code. It is about the duplication of knowledge. It is about expressing the same thing in two different placemores, possibly in two different ways.
 
 <br />
 
 ## YAGNY - You Aren't Gonna Need It.
-Implement things when you actually need them, never when you just foresee that you need them.
-Following YAGNI helps us to avoid over-engineering a solution. You don't want to spend time on future scenarios that are unknown. The problem with implementing a feature that you think might eventually be needed is that quite often the feature ends up not being needed or the requirements for it change.
+Implement things when needed, never when you foresee that you need them.
+Following **YAGNI** helps us to avoid over-engineering a solution. You do not want to spend time on unknown future scenarios. The problem with implementing a feature that you think might eventually be needed is that the feature often ends up not being needed or the requirements for it change.
 
 <br />
 
 ## KISS - Keep it Simple Stupid
-The idea behind KISS is that systems work best when they are kept simple, some ways to apply this principle to software include:
-- Eliminating duplication (DRY principle)
-- Not developing unnecessary features (YAGNI)
+The idea behind KISS is that systems work best when they are kept simple. Some ways to apply this principle to the software include:
+- Eliminating duplication (DRY principle).
+- Not developing unnecessary features (YAGNI).
 - Hiding complexity.
 - Following known standards when possible and minimizing deviations and surprises.
 
-But don't make it overly simple that compromises functionality and delivery.
+However, do not make it overly simple that compromises functionality and delivery.
 
 <br />
 
 ## Naming
 
-- ### Use intention revealing names
-The name of a variable, function, class etc, should tell why it exists, what it does and how it is used. If the name requires a comment them is not a good name.
+### Use Intention Revealing Names
+The name of variables, functions, and classes should tell why they exist, what they do, and how they are used. If the name requires a comment then it is not a good name.
 
         let d; //Elapsed days (bad)
 
         let elapsedDays; //Good, the name indicate purpose
 
 
-- ### Avoid desinformation
+### Avoid Desinformation
 Avoid using names that can be misinterpreted or that can have multiple meanings.
-For example, assuming that you handle users, a variable with the name userList must have a list of users as the name implies , it can't contain a string;
+For example, assuming that you handle users, a variable with the name `userList` must have a list of users as the name implies. It cannot contain a string:
 
         // one will expect an array of users
         // but here is a string with name separated by commas.
@@ -54,8 +53,8 @@ For example, assuming that you handle users, a variable with the name userList m
 
 
 
-- ### Use pronounceable Name
- Names have to mean something and if they do different things they also need to have different names, for example.
+### Use Pronounceable Names
+ Names have to mean something, and if they do different things, they also need to have different names, for example:
 
         function dobleItems(a, b){
                 a.forEach((i) => b.push(i*2) );
@@ -68,11 +67,11 @@ For example, assuming that you handle users, a variable with the name userList m
         }
 
 
-Avoid noise words that are redundant, for example imagine you have a class called Product. If you have another class named ProductData or ProductInfo you have made the name differents but they don't mean something different, the prefixes Info and Data are just noise.
+Avoid redundant words. For example, you have a class called `Product`. If you have another class named `ProductData` or `ProductInfo`, you named them differently, but they do not mean something different. The prefixes *Info* and *Data* are just noise.
 
-- ### Use Searchable Names
+### Use Searchable Names
 
-When using a single-letter name for a variable is hard to know what is does and numeric constants are hard to understand because they don't give you much information. Compare both examples, the first one is just a math operation we don't really know what this numbers are, but the second one we know exactly what is going on.
+When using a single-letter name for a variable is hard to know what it does, and numeric constants are hard to understand because they do not give you much information. Compare both examples; the first one is just a math operation. We do not know what these numbers are, but we know exactly what is going on in the second one.
 
         function calculateDays(s){
                 return s * 60 * 60 * 24;
@@ -95,11 +94,11 @@ When using a single-letter name for a variable is hard to know what is does and 
 
 Functions should be small, not longer than 30 lines of code.
 
-### Do one thing
+### Do One Thing
 
-__Functions should do one thing. They should do it well. They should do it only.__
+__Functions should do one thing only, and well done.__
 
-If you find that you are doing more than one operation in a function, probably is because you can split this function into multiple smaller functions. Check the example bellow, this function is doing multiple operations and can be split into multiple sub operations.
+If a function is doing more than one operation, this can be split into multiple smaller functions. The example below shows a function that is doing multiple operations and can be split into multiple sub-operations:
 
         //Wrong, doing too many things
         function calculatePayment(employee){
@@ -146,9 +145,9 @@ If you find that you are doing more than one operation in a function, probably i
                 return employee.hoursPerDay * 5;
         }
 
-### Reading code from top to bottom.
+### Reading Code from Top to Bottom.
 
-When having multiple functions is better to write them from top to bottom, being the one in the top the top level of abstraction and in the bottom the other function this "top" function uses. For example, let's says that we have function A it uses functions B and C. The "top" function will be A and below it we should find B and C (check the code from the previous topic).
+It is better to write them down from top to bottom when having multiple functions. The one at the top is the top level of the abstraction, and at the bottom, the functions the top function uses. For example, we have function A, which uses functions B and C. The top function will be A, and below it, we should find B and C (check the code from the previous topic).
 
 ```javascript
 function A(){
@@ -166,44 +165,41 @@ function C(){
 
 ```
 
-### Function arguments
+### Function Arguments
 
-Try to have as little arguments as possible, as a general rule up to three. More than three arguments requires justification. Functions with many arguments add mental overload.
+Try to have as few arguments as possible, as a general rule up to three. More than three arguments require justification. Functions with many arguments add mental overload.
 
 <br />
 
 ## Comments
-Comments are not a way to fix bad code, long functions, bad naming etc.. needs to be avoided and adding a comment won't make it clean. You should be able to express yourself in the code.
+Comments are not a way to fix wrong code, extended functions, or lousy naming. Adding a comment will not make it clean. You should be able to express yourself in the code.
 
-Comments are usefull when used correctly
+Comments are helpful when used correctly:
+- The comment has legal comments.
+- The comment is informative.
+- The comment is an explanation.
+- The comment is a clarification.
+- The comment is a warning of consequences.
+- The comment is a to-do.
+- The comment is an amplification.
 
-- Legal comments
-- Informative comments
-- Explanation of Intent
-- Clarification
-- Warning of Consequences
-- Todo comments
-- Amplification
+Comments are not helpful when:
+- The comment has inappropriate Information.
+- The comment is obsolete.
+- The comment is redundant.
+- The comment is poorly written.
+- The comment is commented out of the code.
 
-Don't
-- Inappropriate Information
-- Obsolete comment
-- Redundant Comment
-- Poorly written comment
-- Commented out code
-
-
-Keep in mind that comments needs to be updated as code evolves. So when you add a comment you also add the responsibility of keep this comment out to date.
-
+Keep in mind that comments need to be updated as code evolves. So when you add a comment, you also add the responsibility of keeping this comment out to date.
 
 <br />
 
 
 ## Refactor example
-- Make an example refactor on the live session where we apply all.
+**Make an example refactor on the live session where we apply all.**
 
-Define Clean Code.
-Concepts to keep in mind.
-Naming.
-Functions
-Comments
+- Define Clean Code.
+- Concepts to keep in mind.
+- Naming.
+- Functions.
+- Comments.

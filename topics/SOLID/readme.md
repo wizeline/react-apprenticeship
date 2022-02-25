@@ -1,27 +1,26 @@
-# SOLID
- SOLID is an acronym for a series of 5 principles, it was originally coined by Robert C Martin and they serve as a guide to healthy clean code. They where defined mostly for OOP but the wisdom they hold can and should be applied to every other area in software development regardless of the coding style or libraries and frameworks used.
+# S.O.L.I.D.
+ S.O.L.I.D. is an acronym for a series of 5 principles, coined by Robert C. Martin, and they serve as a guide to a healthy, clean code. They were defined originally for Object-Oriented Programming, but the wisdom they hold can and should be applied to every other area in software development regardless of the coding style, libraries, and frameworks used.
 
 <br/>
 
 ## Single Responsability
 > **_"A class should have only one reason to change"_**
 
-We can adapt this principle to our need and say that a component should have only one reason to change. The main idea is to avoid giving more than one responsibility to a software entity  (module,class, function, component etc.)  
+We can adapt this principle to our needs and say that a component should have only one reason to change. The main idea is to avoid giving more than one responsibility to a software entity (module, class, function, or component).  
 
 <br/>
 
 ## Open Close principle
 > **_"Software entities (classes, modules, functions, etc) should be open for extension, but closed for modification"_**
 
-We know we have followed this principle when we can extend and adapt the functionalities of the module without changing the code that was already writen which means that we can extends and create new pieces of code on top of the ones we already have.
-The key to achieve this principle is working with abstract code and letting the concrete consumers specify their behavior.
+We know we have followed this principle when we can extend and adapt the module's functionalities without changing the code already written, which means that we can extend and create new pieces of code on top of the ones we already have. The key to achieving this principle is working with abstract code and letting the concrete consumers specify their behavior.
 
 <br/>
 
 ## Liskov Substitution principle.
 > **_"Subtypes must be substitutable for their base types"_**
 
-This is most visible when using classes and interfaces, for example let's asume that we have a messaging Class that takes as input in the constructor an object of type Person, also let's assume that we have another type name Employee that is a subtype of Person, if we follow the Liskov subsitution principle we should be able to pass a Person and Employee to Message.
+This principle is most visible when using classes and interfaces. For example, we have a `Message` class, and its input is the **constructor** of an object of type `Person`. Also, let us assume that we have another type named `Employee`, a subtype of `Person`. If we follow the **Liskov Substitution Principle**, we should pass a `Person` and `Employee` to `Message`.
 
         //Employee is a subtype of Person
         
@@ -43,7 +42,7 @@ This is most visible when using classes and interfaces, for example let's asume 
 
 > **_" Clients should not be forced to depend on methods that they don't use."_**
 
-Let's look at the example, we have an interface for a Car with a series of methods that most be implemented. Look at the method honk, this will be valid for cars but maybe not for an excavator forcing us to implement a not needed method that at the end throws an error.
+Let us look at the below example. We have an interface for a `Car` with a series of methods that must be implemented. Look at the method `honk`, and this will be valid for cars *but not* for an excavator forcing us to implement a not-needed method that, in the end, throws an error.
 
                 interface Vehicule {
                         honk() : void;
@@ -60,7 +59,7 @@ Let's look at the example, we have an interface for a Car with a series of metho
                 }
 
 
-Following the interface segregation principle we can fix this issue by making many smaller especialized interfaces like so:
+Following the **Interface Segregation Principle** we can fix this issue by making many smaller specialized interfaces like so:
 
                 interface Vehicule {
                         move():void;
@@ -85,7 +84,7 @@ Following the interface segregation principle we can fix this issue by making ma
 
 > **_" Abstraction should not depend on details. Details should depend on abstractions. "_**
 
-Note: A detail means a concrete implementation. Also a detail can be the concrete technology used to store data (DB system).
+**Note**: A detail means a concrete implementation. Also a detail can be the concrete technology used to store data (Database system).
 
 Let's asume we have a very simple accounting system that let's us manages account by making deposits and withdraws and we deside to use a concrete Database (MySQL for example). The core of the system will go into a class named Account wich will have some logic implemented like for example you can't withdraw more than you have in you account.
 
@@ -101,7 +100,7 @@ Let's asume we have a very simple accounting system that let's us manages accoun
                 }
         }
 
-It will be a violation if this core class implements concrete details related to MySQL like building the querys, instead is better to create an interface that specify the operations with the DB and inject it to the class Account, this way the Account don't depend on a concrete DB and multiple can be used when needed, also this allow for the Account class to be more simpler and have only one responsibility.
+If this **Core Class** implements concrete details related to **MySQL**, it will be a violation, like building the queries instead. It is better to create an interface that specifies the operations with the DB and injects it into the class `Account`. This way, the `Account` does not depend on a concrete DB, and multiple can be used when needed. Also, this allows for the `Account` class to be simpler and have only one responsibility.
 
 
         interface Storage {
@@ -171,7 +170,7 @@ It will be a violation if this core class implements concrete details related to
 
         
 
-Thanks to this abstractions now is possible to re use the Account class to manage different storages.
+Thanks to this abstractions now, it is possible to re-use the `Account` class to manage different storages.
 
         //Different concrete implementations of Storage interface
         const mysqlStorage = new MySQLStorage();

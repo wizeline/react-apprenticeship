@@ -1,15 +1,15 @@
  # TypeScript
- We will use typescript when we need a more strict way to pass data. We need to define what kind of data we are passing and for that we will use types.
+ We will use typescript when we need a more strict way to pass data. We need to define the data type we pass using types definitions.
 
 
  ## Type definitions
  ### Primitive
- - number
- - string
- - boolean
- - null
- - undefined
- - array
+ - **Number**
+ - **String**
+ - **Boolean**
+ - **Null**
+ - **Undefined**
+ - **Array**
 
 
 
@@ -28,7 +28,7 @@
         
 
 ### Custom types
- We can make our own types to describe more complex structures. For that we can use the keyword type and them specify what the type will.
+ We can make our data type to describe more complex structures. We use the keyword `type` and specify what type the data will be.
 
         type Person = {
             name : string;
@@ -36,28 +36,28 @@
             isAwake : boolean;
         }
 
-Now we have a type definition we can use as an input for a function or as an array.
+Once the type is defined, we can use it as an input for a function or an array.
 
 ## Type Check
-To check type definitions for an array of persons into a function we can do:
+The below function is an example of how to check the type definition of an array of persons:
 
         function sayHelloToPersons(persons : Person[]) : void {
             //This will say hello to many people
         }
 
-Functions need a return type too, sometimes we will use a function that return some kind of value and some times the function won't return anything and for that we will use the special type called "void" as in the example above. The function sayHellowToPersons won't return anything but if you take a look at the function bellow we can clearly see that will return a string.
+Functions also need a return type; sometimes, a function returns a value and sometimes will not. For a function that does not return a value, we use a type of data called `void`. Please refer to the above function. The above function called `sayHellowToPersons` does not return anything, but if you look at below’s function, you can see it returns a string:
 
 
         function generateHello(person : Person) : string {
             return `hello ${person.name}`;
         }
 
-In the react world, we can use Type definitions to ensure a component will get the correct props. Take this example:
+In **React**, Type Definitions are used to ensure a component gets the correct props. Please refer to the below example:
 
         const PersonCard : React.FC<{someone : Person}> = ({someone}) => {
             //This component will render the person info
         }
-> Note the React.FC, this is a type definition for Functional Components (hence FC), this is mandatory for working with Typescript and React.
+> **Note**: The `React.FC` is a type definition for **Functional Components** (FC). This is mandatory for working with **Typescript** and **React**.
 
-The component will receive a prop named someone that will be of Type person, hence we can spect for it to have a name, age and a isAwake propierty.
+The component receives a prop named `someone` who is a type `person`; hence, we can expect it to have a `name`, `age`, and a property called `isAwake`.
 

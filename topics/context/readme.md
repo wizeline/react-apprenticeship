@@ -1,14 +1,14 @@
 # Context API
 
-Normally we pass data between components from parent to child, but if the tree have multiple levels of nesting we can end up with the so called prop drilling anti pattern. Creating a context allow us to share data between components and is specially usefull when we have a group of components that have a common goal, then we can share the state among then, we can have as many context we need and can handle their scope very easy. Think of the context api as a way to have smaller states, for some small applications this can replace tools like Redux but keep in mind that the context is not optimized to handle too many changes.
+We usually pass data between components from parent to child, but if the tree has multiple levels of nesting, we can end up with the so-called prop Drilling Anti-pattern. Creating a context allows us to share data between components and is especially useful when we have a group of components with a common goal. We can share the state among them, have as many contexts as we need, and handle their scope easily. Think of the **Context API** as a way to have smaller states; for some small applications, this can replace tools like Redux but keep in mind that the context is not optimized to handle too many changes.
 
-To implement the context api on functional components you will need to use:
+To implement the **Context API** on functional components you need:
 
-- createContext : Function from react that creates the creates a context object.
+- `createContext`: It is a function from React that creates a context object.
 
-- Context.Provider : Is a component that has to be the parent for all the other components that will have access to the context.
+- `Context.Provider`: It is a component that has to be the parent for all other components that need access to the context.
 
-- useContext : Hook from react that receives the context reference and return the data in the context, this hook will be used in the client components to access the information.
+- `useContext`: It is a **hook** from **React** that receives the context reference and returns the data in the context. `UseContext` is used in the client components to access the information.
 
 
         const ExampleContext = React.createContext(defaultValue);
@@ -28,4 +28,4 @@ To implement the context api on functional components you will need to use:
             return (<p>{contextValue}</p>)
         }
 
-Note in the example above how we did not pass the value as a prop but using the context api, for this example this is not practical but it helps ilustrate the point.
+**Note**: In above’s example the values were not passed as a prop but uses the **Context API**. This is not a practical example but helps to illustrate the point.

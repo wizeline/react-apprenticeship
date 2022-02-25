@@ -1,11 +1,11 @@
-# [Array operations](./topics/arrays/readme.md)
+# [Array Operations](./topics/arrays/readme.md)
 - Map
 - Filter
-- spread
+- Spread
 
 
 # [TypeScript for React](./topics/typescript/readme.md)
- - Type definitions
+ - Type Definitions
  - Type Checking
  - React Types
 
@@ -24,14 +24,14 @@
      - useRef
 
 # [ContextAPI](./topics/context/readme.md)
- - What it does?
- - Concepts involved
+ - What it Does?
+ - Concepts Involved
 
 
-# [CSS Modules](./topics/cssmodules/README.md)
+# [CSS Modules](./topics/context/readme.md)
 - Exercise
 
-# [Patterns](./topics/patterns/README.md)
+# [Patterns](./topics/patterns/readme.md)
 - Composition
 - CustomHooks
 - High Order Components
@@ -46,12 +46,12 @@
 # [S.O.L.I.D](./topics/SOLID/readme.md)
 - Single Responsibility
 - Open Close
-- Liskov substitution principle
-- Interface segregation
+- Liskov Substitution Principle
+- Interface Segregation
 - Dependency Inversion
 
 # [Clean Code](./topics/cleancode/readme.md)
-- What is clean code?
+- What is Clean Code?
 - DRY
 - YAGNI
 - Naming
