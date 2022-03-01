@@ -31,14 +31,14 @@
 # [CSS Modules](./topics/context/readme.md)
 - Exercise
 
-# [Patterns](./topics/patterns/readme.md)
+# [Patterns](./topics/patterns/README.md)
 - Composition
 - CustomHooks
 - High Order Components
 - Render Props
 - State Initializer
 
-# [Testing](./topics/testing/readme.md)
+# [Testing](./topics/testing/README.md)
 - TDD Intro
 - Jest
 - React Testing Library
